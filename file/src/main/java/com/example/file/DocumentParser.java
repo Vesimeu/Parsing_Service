@@ -10,48 +10,53 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class DocumentParser {
-    public static void main(String[] args) {
-        String docxPath = "example.docx";
-        String xlsxPath = "example.xlsx";
-        String pdfPath = "example.pdf";
 
-        try {
-            System.out.println("Parsing DOCX file...");
-            parseDocx(docxPath);
-            System.out.println("\nParsing XLSX file...");
-            parseXlsx(xlsxPath);
-            System.out.println("\nParsing PDF file...");
-            parsePdf(pdfPath);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void parseDocx(String filePath) throws IOException {
+    public static String parseDocx(String filePath) throws IOException {
         try (FileInputStream fis = new FileInputStream(filePath);
              XWPFDocument document = new XWPFDocument(fis)) {
-            document.getParagraphs().forEach(paragraph -> System.out.println(paragraph.getText()));
+            StringBuilder content = new StringBuilder();
+            document.getParagraphs().forEach(paragraph -> content.append(paragraph.getText()).append(" "));
+            return content.toString().trim();
         }
     }
 
-    private static void parseXlsx(String filePath) throws IOException {
+    public static String parseXlsx(String filePath) throws IOException {
         try (FileInputStream fis = new FileInputStream(filePath);
              XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
             XSSFSheet sheet = workbook.getSheetAt(0);
+            StringBuilder content = new StringBuilder();
             sheet.forEach(row -> {
-                row.forEach(cell -> System.out.print(cell.toString() + "\t"));
-                System.out.println();
+                row.forEach(cell -> content.append(cell.toString()).append(" "));
+                content.append("\n");
             });
+            return content.toString().trim();
         }
     }
 
-    private static void parsePdf(String filePath) throws IOException {
+    public static String parsePdf(String filePath) throws IOException {
         try (PDDocument document = PDDocument.load(Files.newInputStream(Paths.get(filePath)))) {
             PDFTextStripper pdfStripper = new PDFTextStripper();
-            String text = pdfStripper.getText(document);
-            System.out.println(text);
+            return pdfStripper.getText(document).trim();
         }
+    }
+
+    public static List<String> extractKeywords(String filePath, String fileType, int frequencyThreshold) throws IOException {
+        String content = "";
+        switch (fileType) {
+            case "docx":
+                content = parseDocx(filePath);
+                break;
+            case "xlsx":
+                content = parseXlsx(filePath);
+                break;
+            case "pdf":
+                content = parsePdf(filePath);
+                break;
+        }
+        System.out.println(content);
+        return TextProcessor.extractKeywords(content, frequencyThreshold);
     }
 }
