@@ -8,7 +8,7 @@ public class Main {
         String docxFilePath = "src/test/resources/example.docx";
         String xlsxFilePath = "src/test/resources/example.xlsx";
         String pdfFilePath = "src/test/resources/example.pdf";
-        int frequencyThreshold = 1;
+        int frequencyThreshold = 4;
 
         try {
             List<String> docxKeywords = DocumentParser.extractKeywords(docxFilePath, "docx", frequencyThreshold);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.file.DocumentParserTest" time="0.794" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.file.DocumentParserTest" time="0.746" tests="3" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Пётр\AppData\Local\Temp\surefire15698003393368075458\surefirebooter-20240529160105800_3.jar C:\Users\Пётр\AppData\Local\Temp\surefire15698003393368075458 2024-05-29T16-01-05_682-jvmRun1 surefire-20240529160105800_1tmp surefire_0-20240529160105800_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Пётр\AppData\Local\Temp\surefire14952097305685879633\surefirebooter-20240529184335539_3.jar C:\Users\Пётр\AppData\Local\Temp\surefire14952097305685879633 2024-05-29T18-43-35_429-jvmRun1 surefire-20240529184335539_1tmp surefire_0-20240529184335539_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Геликон\Java\Parsing_Service\file\target\test-classes;C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Геликон\Java\Parsing_Service\file\target\classes;C:\Users\Пётр\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\Пётр\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\Пётр\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\Пётр\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Пётр\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\Пётр\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\Пётр\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\Пётр\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\Пётр\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\Пётр\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\Пётр\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\Пётр\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\Пётр\.m2\repository\org\apache\poi\poi-scratchpad\5.2.3\poi-scratchpad-5.2.3.jar;C:\Users\Пётр\.m2\repository\org\apache\pdfbox\pdfbox\2.0.28\pdfbox-2.0.28.jar;C:\Users\Пётр\.m2\repository\org\apache\pdfbox\fontbox\2.0.28\fontbox-2.0.28.jar;C:\Users\Пётр\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Пётр\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\Пётр\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\Пётр\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Пётр\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\Пётр\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\Пётр\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Пётр\.m2\repository\org\mockito\mockito-core\4.5.1\mockito-core-4.5.1.jar;C:\Users\Пётр\.m2\repository\net\bytebuddy\byte-buddy\1.12.9\byte-buddy-1.12.9.jar;C:\Users\Пётр\.m2\repository\net\bytebuddy\byte-buddy-agent\1.12.9\byte-buddy-agent-1.12.9.jar;C:\Users\Пётр\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Пётр\AppData\Local\Temp\surefire15698003393368075458\surefirebooter-20240529160105800_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Пётр\AppData\Local\Temp\surefire14952097305685879633\surefirebooter-20240529184335539_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.1+12-LTS-29"/>
@@ -58,18 +58,33 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testParseDocx" classname="com.example.file.DocumentParserTest" time="0.42">
-    <system-out><![CDATA[привет привет мир! Как дела? дела
+  <testcase name="testParseDocx" classname="com.example.file.DocumentParserTest" time="0.406">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at com.example.file.DocumentParserTest.testParseDocx(DocumentParserTest.java:16)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+    <system-out><![CDATA[Сказка сказки сказке сказку
+{сказк=4}
 ]]></system-out>
     <system-err><![CDATA[ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
 ]]></system-err>
   </testcase>
-  <testcase name="testParseXlsx" classname="com.example.file.DocumentParserTest" time="0.149">
+  <testcase name="testParseXlsx" classname="com.example.file.DocumentParserTest" time="0.143">
     <system-out><![CDATA[Привет мир!
+{мир=1, привет=1}
 ]]></system-out>
   </testcase>
-  <testcase name="testParsePdf" classname="com.example.file.DocumentParserTest" time="0.202">
+  <testcase name="testParsePdf" classname="com.example.file.DocumentParserTest" time="0.172">
     <system-out><![CDATA[Привет мир!
+{мир=1, привет=1}
 ]]></system-out>
   </testcase>
 </testsuite>

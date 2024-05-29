@@ -6,6 +6,8 @@ import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import com.example.file.StemmerPorterRU;
+
 public class TextProcessor {
 
     private static final Set<String> STOP_WORDS = Set.of(
@@ -36,19 +38,26 @@ public class TextProcessor {
                                  .replaceAll("[^а-яёa-z\\s]", "")
                                  .replaceAll("\\s+", " ");
         StemmerPorterRU stemmer = new StemmerPorterRU();
-
+    
         List<String> words = Arrays.asList(cleanedText.split(" "));
-        
-        // Стеммируем и фильтруем слова одновременно
-        Map<String, Long> wordFrequencies = words.stream()
-                                                 .map(StemmerPorterRU::stem)
-                                                 .filter(word -> !STOP_WORDS.contains(word))
-                                                 .collect(Collectors.groupingBy(word -> word, Collectors.counting()));
+        // Стеммируем слова и удаляем стоп-слова
+        List<String> stemmedWords = words.stream()
+                                         .map(StemmerPorterRU::stem)
+                                         .filter(word -> !STOP_WORDS.contains(word))
+                                         .collect(Collectors.toList());
+    
+        // Подсчитываем частоту каждого слова
+        Map<String, Long> wordFrequencies = stemmedWords.stream()
+                                                        .collect(Collectors.groupingBy(word -> word, Collectors.counting()));
+        System.out.println(wordFrequencies);
+    
+        // Оставляем только те слова, которые встречаются больше или равно frequencyThreshold
+        List<String> keywords = wordFrequencies.entrySet().stream()
+        .filter(entry -> entry.getValue() >= frequencyThreshold)
+        .map(Map.Entry::getKey)
+        .collect(Collectors.toList());
 
-        return wordFrequencies.entrySet().stream()
-                              .filter(entry -> entry.getValue() >= frequencyThreshold)
-                              .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
-                              .map(Map.Entry::getKey)
-                              .collect(Collectors.toList());
+
+        return keywords;
     }
 }
